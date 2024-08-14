@@ -626,6 +626,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   switchPlayerBtn: {fileID: 1979544561}
+  playerJumpBtn: {fileID: 0}
+  movePlayerLeftBtn: {fileID: 1255594181}
+  movePlayerRightBtn: {fileID: 1162581424}
   listPlayer: []
 --- !u!1 &968780998
 GameObject:
@@ -837,6 +840,7 @@ GameObject:
   - component: {fileID: 1162581423}
   - component: {fileID: 1162581422}
   - component: {fileID: 1162581421}
+  - component: {fileID: 1162581424}
   m_Layer: 5
   m_Name: MoveRight
   m_TagString: Untagged
@@ -945,6 +949,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162581419}
   m_CullTransparentMesh: 1
+--- !u!114 &1162581424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162581419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a7107c76ccfe1408a3a9c9b15d9ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1255594176
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,6 +973,7 @@ GameObject:
   - component: {fileID: 1255594180}
   - component: {fileID: 1255594179}
   - component: {fileID: 1255594178}
+  - component: {fileID: 1255594181}
   m_Layer: 5
   m_Name: MoveLeft
   m_TagString: Untagged
@@ -1065,6 +1082,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255594176}
   m_CullTransparentMesh: 1
+--- !u!114 &1255594181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255594176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a7107c76ccfe1408a3a9c9b15d9ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1448856157
 GameObject:
   m_ObjectHideFlags: 0
