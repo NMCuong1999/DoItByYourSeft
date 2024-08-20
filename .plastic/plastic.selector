@@ -1,4 +1,4 @@
-repository "DoItYourself@hlam5370@cloud"
+repository "DoItByYourSeft@hlam5370@cloud"
   path "/"
     br "/main"
     co "/main"
