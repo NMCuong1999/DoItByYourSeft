@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3190038551574966115}
   - component: {fileID: 9151978171824562044}
   - component: {fileID: 3639352795138498939}
+  - component: {fileID: 7857802213045641930}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -36,6 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2343119643659371503}
+  - {fileID: 8544759166293583949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6403642810952123182
@@ -200,6 +202,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c87c5e98b64633429e6d4641d5d21f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpPower: 200
+  rayDistance: 0.54
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &7857802213045641930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976372559826884591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad00588189e117a498b7245470daf7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpPoint: {fileID: 8544759166293583949}
+--- !u!1 &4432733527311606532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8544759166293583949}
+  m_Layer: 0
+  m_Name: PickUpPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8544759166293583949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4432733527311606532}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8083270842542126389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7129818604348374626
 GameObject:
   m_ObjectHideFlags: 0

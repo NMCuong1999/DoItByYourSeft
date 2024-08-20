@@ -10,6 +10,7 @@ public class MoveController : MonoBehaviour
     [SerializeField] private Button playerJumpBtn;
     [SerializeField] private OnButtonHold movePlayerLeftBtn;
     [SerializeField] private OnButtonHold movePlayerRightBtn;
+    [SerializeField] private Button playerPickUpBtn;
     public static MoveController instance;
     [SerializeField] private List<Player> listPlayer;
     private Player currentPlayer;
@@ -19,6 +20,7 @@ public class MoveController : MonoBehaviour
     public event EventHandler OnPlayerMoveRight;
     public event EventHandler OnPlayerStopMoving;
     public event EventHandler OnPlayerJump;
+    public event EventHandler OnPlayerPickUp;
     private void Awake()
     {
         if (instance == null)
@@ -38,6 +40,10 @@ public class MoveController : MonoBehaviour
         playerJumpBtn.onClick.AddListener(() =>
         {
             OnPlayerJump?.Invoke(this, EventArgs.Empty);
+        });
+        playerPickUpBtn.onClick.AddListener(() => 
+        {
+            OnPlayerPickUp?.Invoke(this, EventArgs.Empty);
         });
     }
     private void Update()

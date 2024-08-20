@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerSelectVisual selectVisual;
     private PlayerMovement playerMovement;
     private PlayerJump playerJump;
+    private PlayerPickUp playerPickUp;
     public static event EventHandler OnPlayerSpawn;
     private Vector2 moveDirection;
     private void Start()
@@ -16,15 +17,25 @@ public class Player : MonoBehaviour
         isActive = false;
         playerMovement = GetComponent<PlayerMovement>();
         playerJump = GetComponent<PlayerJump>();
+        playerPickUp = GetComponent<PlayerPickUp>();
         OnPlayerSpawn?.Invoke(this, EventArgs.Empty);
         MoveController.instance.OnSwitchPlayer += MoveController_OnSwitchPlayer;
         MoveController.instance.OnPlayerMoveLeft += MoveController_OnPlayerMoveLeft;
         MoveController.instance.OnPlayerMoveRight += MoveController_OnPlayerMoveRight;
         MoveController.instance.OnPlayerStopMoving += MoveController_OnPlayerStopMoving;
-        MoveController.instance.OnPlayerJump += Instance_OnPlayerJump;
+        MoveController.instance.OnPlayerJump += MoveController_OnPlayerJump;
+        MoveController.instance.OnPlayerPickUp += MoveController_OnPlayerPickUp;
     }
 
-    private void Instance_OnPlayerJump(object sender, EventArgs e)
+    private void MoveController_OnPlayerPickUp(object sender, EventArgs e)
+    {
+        if(isActive)
+        {
+            playerPickUp.PickUp();
+        }
+    }
+
+    private void MoveController_OnPlayerJump(object sender, EventArgs e)
     {
         if(isActive)
         {
