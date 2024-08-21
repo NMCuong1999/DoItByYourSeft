@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerPickUp : MonoBehaviour
 {
     [SerializeField] private Transform pickUpPoint;
+    [SerializeField] private float throwPower;
     private bool isReadyPickUp;
     private GameObject objPickUp;
     private float pickOffSet;
@@ -44,8 +45,11 @@ public class PlayerPickUp : MonoBehaviour
         else
         {
             //drow obj
+            objPickUp.transform.SetParent(null);
             objPickUp.GetComponent<Rigidbody2D>().isKinematic = false;
-            objPickUp.GetComponent<Rigidbody2D>().AddForce(Vector2.left, ForceMode2D.Force);
+            Vector2 throwDirection = transform.right;
+            objPickUp.GetComponent<Rigidbody2D>().AddForce(throwDirection * throwPower, ForceMode2D.Impulse);
+            objPickUp = null;
         }
     }
 }

@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpPoint: {fileID: 8544759166293583949}
+  throwPower: 10
 --- !u!1 &4432733527311606532
 GameObject:
   m_ObjectHideFlags: 0
