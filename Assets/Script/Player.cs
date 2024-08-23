@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private PlayerPickUp playerPickUp;
     public static event EventHandler OnPlayerSpawn;
     private Vector2 moveDirection;
+    public Vector2 faceDirection {  get; private set; }
     private void Start()
     {
         isActive = false;
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour
         if(isActive)
         {
             moveDirection = Vector2.left;
+            faceDirection = Vector2.left;
         }
     }
 
@@ -64,6 +66,7 @@ public class Player : MonoBehaviour
         if (isActive)
         {
             moveDirection = Vector2.right;
+            faceDirection = Vector2.right;
         }
     }
 
