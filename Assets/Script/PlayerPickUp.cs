@@ -10,9 +10,11 @@ public class PlayerPickUp : MonoBehaviour
     private bool isReadyPickUp;
     private GameObject objPickUp;
     private float pickOffSet;
+    private Player player;
     private void Start()
     {
         isReadyPickUp = false;
+        player = GetComponent<Player>();
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -47,7 +49,8 @@ public class PlayerPickUp : MonoBehaviour
             //drow obj
             objPickUp.transform.SetParent(null);
             objPickUp.GetComponent<Rigidbody2D>().isKinematic = false;
-            Vector2 throwDirection = transform.right;
+            Vector2 throwDirection = player.faceDirection;
+            Debug.Log(player.faceDirection);
             objPickUp.GetComponent<Rigidbody2D>().AddForce(throwDirection * throwPower, ForceMode2D.Impulse);
             objPickUp = null;
         }
